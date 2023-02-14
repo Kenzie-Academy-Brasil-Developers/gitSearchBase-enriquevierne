@@ -6,6 +6,7 @@
     align-items: center;
     font-family: var(--font-primary);
     color: var(--color-grey-7);
+    
 }
 
 .left-container {
@@ -16,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .info-container {
@@ -65,7 +67,6 @@
     flex-direction: column;
     gap: 1.25rem;
 
-
 }
 
 .search-form h2 {
@@ -93,6 +94,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     padding: 12px;
+
 }
 
 .search-form button {
@@ -112,4 +114,5 @@
     color: var(--color-grey-7);
     font-size: .875rem;
     font-weight: 500;
+
 }
