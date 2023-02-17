@@ -1,7 +1,5 @@
 import { getUserByName, getRepos } from '/src/scripts/request.js'
 
-/* getUserByName('enriquevierne') */
-
 export function showProfile() {
 
     const input = document.querySelector('input')

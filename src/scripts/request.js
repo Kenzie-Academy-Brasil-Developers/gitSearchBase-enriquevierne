@@ -9,7 +9,7 @@ export async function getUserByName(user) {
         .then(response => response.json())
         .then(res => {
             localStorage.setItem('user', JSON.stringify(res))
-            console.log(res.message)
+            
             if (res.message === 'Not Found') {
                 window.location.replace('/src/pages/error.html')
             } else {

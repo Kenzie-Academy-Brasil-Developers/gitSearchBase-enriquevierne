@@ -106,7 +106,7 @@
     gap: 10px;
     width: 100%;
     max-width: 316px;
-    height: 38px;
+    min-height: 38px;
     background: var(--color-brand-2);
     box-sizing: border-box;
     border-radius: 4px;

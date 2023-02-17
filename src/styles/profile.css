@@ -195,19 +195,17 @@ body {
 
 .stargray {
 
-    background-image: url(../assets/img/stargrey.png);
     width: 16px;
     height: 16px;
     cursor: pointer;
-    
-
+       
 }
 .staryellow {
 
     background-image: url(../assets/img/starred.png);
     width: 16px;
     height: 16px;
-
+    cursor: pointer;
 }
 
 .total-star{

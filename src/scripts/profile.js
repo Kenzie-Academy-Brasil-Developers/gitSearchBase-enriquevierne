@@ -66,21 +66,23 @@ function renderReposUser() {
         totalStar.classList.add('total-star')
         totalStar.innerText =  repo.stargazers_count
         starRepo.classList.add('stargray')
+        starRepo.src = '../assets/img/stargrey.png'
         starRepo.addEventListener('click', ()=>{
 
             if(starRepo.classList.contains('stargray')){
 
                 totalStar.innerText++
                 starRepo.classList.remove('stargray')
+                starRepo.src = '../assets/img/starred.png'
                 starRepo.classList.add('staryellow')
             }else{
                 
                 totalStar.innerText--
-                starRepo.classList.add('stargray')
                 starRepo.classList.remove('staryellow')
+                starRepo.src = '../assets/img/stargrey.png'
+                starRepo.classList.add('stargray')
             }
         })
-
 
         container.append(cardRepo)
         cardRepo.append(titleRepo, textRepo, interationsRepo)
