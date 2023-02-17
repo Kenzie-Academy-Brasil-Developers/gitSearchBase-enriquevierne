@@ -11,6 +11,7 @@ export function showProfile() {
 
         const repos = await getRepos(input.value)
         const user = await getUserByName(input.value)
+        
     })
 
 }

@@ -40,25 +40,77 @@ function renderReposUser() {
         const cardRepo = document.createElement('li')
         const titleRepo = document.createElement('h2')
         const textRepo = document.createElement('p')
+        const interationsRepo = document.createElement('div')
         const linkRepo = document.createElement('a')
-
+        const countStar = document.createElement('div')
+        const starRepo = document.createElement('img')
+        const totalStar = document.createElement('p')
+        
         cardRepo.classList.add('repos-card')
 
+        titleRepo.classList.add('title-repo')
         titleRepo.innerText = repo.name
-
-        textRepo.innerText = repo.description
         
+        textRepo.classList.add('text-repo')
+        textRepo.innerText = repo.description
 
+        interationsRepo.classList.add('interations-repos')
+        
         linkRepo.classList.add('link-repos')
         linkRepo.target = '_blank'
         linkRepo.innerText = 'Repositório'
         linkRepo.href = repo.html_url
 
+        countStar.classList.add('count-star')
+        
+        totalStar.classList.add('total-star')
+        totalStar.innerText =  repo.stargazers_count
+        starRepo.classList.add('stargray')
+        starRepo.addEventListener('click', ()=>{
+
+            if(starRepo.classList.contains('stargray')){
+
+                totalStar.innerText++
+                starRepo.classList.remove('stargray')
+                starRepo.classList.add('staryellow')
+            }else{
+                
+                totalStar.innerText--
+                starRepo.classList.add('stargray')
+                starRepo.classList.remove('staryellow')
+            }
+        })
+
+
         container.append(cardRepo)
-        cardRepo.append(titleRepo, textRepo, linkRepo)
+        cardRepo.append(titleRepo, textRepo, interationsRepo)
+        interationsRepo.append(linkRepo, countStar)
+        countStar.append(starRepo, totalStar)
 
     });
 
     return container
 }
 renderReposUser()
+
+function countRepos(){
+
+    const data = localStorage.getItem('user')
+    const user = JSON.parse(data)
+    console.log("-> ~ user", user)
+    const totalRepos = document.querySelector('.total-repos')
+
+    if(user.public_repos === 0){
+
+        const emptyList = document.querySelector('.repos-list')
+        const message = document.createElement('h2')
+
+        message.innerText = 'Este usuário não possui repositórios públicos.'
+        emptyList.append(message)
+    }else{
+
+        totalRepos.innerText = `Total de repositórios públicos: ${user.public_repos}`
+    }
+
+}
+countRepos()
